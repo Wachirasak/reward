@@ -30,8 +30,7 @@ body {
     margin-bottom: 1.5rem;
 	font-size: 3em;
 }
-	.h2, h2 {
-	}
+
 	.Top{
 		background-image: url('../img/bg-top.jpg');
 		background-repeat: no-repeat;
@@ -54,7 +53,7 @@ body {
 	.bt_login{
 		width: 100%;
 		margin: 10px 0;
-		background-color: #2f5caa;;
+		background-color: #10791e;;
 		color: #FFFFFF;
 		font-size: 1.8em;
 		border: none;
@@ -63,7 +62,7 @@ body {
 	}
 
 	.bt_login:hover{
-		background-color: #cc0404;
+		background-color: #0c9b30;
 	}
 
 	.full-row{
@@ -82,7 +81,7 @@ body {
 
 .nav-menu {text-align:center;}
 .nav-menu>ul{	padding: 0;	margin: auto;}
-.menu-div{	position: relative;	width: 100%; background-color: #2f5caa;;}
+.menu-div{	position: relative;	width: 100%; background-color: #10791e;;}
 li {    list-style: none;}
 .menu-div .nav-menu ul li {    font-size: 23px;     list-style-type: none;	display: inline;	border-left: 1px solid #000000;	padding: 0 10px;}
 .menu-div .nav-menu ul li:first-child {	border-left: none;}
@@ -95,7 +94,7 @@ li {    list-style: none;}
 		}
 
 .nav-tabs {
-    border-bottom: 5px solid #2f5caa;
+    border-bottom: 5px solid #10791e;
 }
 .nav-tabs > li {
     float: left;
@@ -105,7 +104,7 @@ li {    list-style: none;}
 .nav-tabs .nav-link.active,  .nav-tabs > li.active > a:focus, .nav-tabs > li.active > a:hover {
     color: #fff;
     cursor: default;
-    background-color: #2f5caa;
+    background-color: #10791e;
 	border:none;
 
 }
@@ -120,7 +119,7 @@ li {    list-style: none;}
 .nav > li > a:focus, .nav > li > a:hover {
 
     text-decoration: none;
-    background-color: #2f5caa;
+    background-color: #10791e;
     color: #FFFFFF;
 
 }
@@ -172,7 +171,7 @@ li {    list-style: none;}
 	text-align: center;
 }
 .bt-reward{
-	cursor:pointer; background-color:#2f5caa; color:#fff; margin-bottom:5px; font-size: 1.8em;
+	cursor:pointer; background-color:#10791e; color:#fff; margin-bottom:5px; font-size: 1.8em;
 }
 .bt-reward-dis{
 	background-color:#595959; color:#fff; margin-bottom:5px; font-size: 1.8em;
@@ -181,7 +180,7 @@ li {    list-style: none;}
 	color: #FFFFFF;
 }
 .bt-reward:hover , .bt-reward:visited , .bt-reward:active , .bt-reward:focus{
-	background-color:#cc0404;
+	background-color:#0c9b30;
 	color: #FFFFFF;
 }
 .bt-cart{
@@ -230,6 +229,7 @@ li {    list-style: none;}
 }
 
 .qrlineat{padding: 5px 20px;}
+
 
 @media only screen and (max-width:768px) {
 

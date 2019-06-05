@@ -5,8 +5,8 @@
   			header("Location: index.php");
   		}
 
-      $p_id = $_REQUEST['id'];
-      $act = $_REQUEST['act'];
+      $p_id = mysqli_real_escape_string($con, $_REQUEST['id']);
+      $act = mysqli_real_escape_string($con, $_REQUEST['act']);
 
     	if($act=='add' && !empty($p_id))
     	{
@@ -47,6 +47,8 @@
       }
 
       $title = "ตะกร้าสินค้า";
+
+      require 'library/core.php';
       require 'template/front/member_header.php';
 
 ?>
@@ -55,14 +57,19 @@
       <div class="row login-zone" >
         <div class="col-lg-6" style="background-color:#f9f9f9; vertical-align: middle; padding:10px " id="loginzone">
 		    <h1><strong><?php echo $row_user['firstname'] ?> <?php echo $row_user['lastname'] ?></strong></h1>
+        <div style="">
+            <br />
+            <h4><a href="<?php echo $baseUrl; ?>/history.php" rel="noopener"> ประวัติการแลก</a></h4><br />
+            <h4><a href="<?php echo $baseUrl; ?>/point_history.php" rel="noopener"> ประวัติแต้ม</a></h4>
+        </div>
         </div>
 
-        <div class="col" style="background-color:#eeeeee;  vertical-align: middle; padding:10px; min-height: 269px;" >
+        <div class="col-lg-6" style="background-color:#eeeeee;  vertical-align: middle; padding:10px; min-height: 269px;" >
         <div >
-			<h1><strong>THEREWARD69</strong></h1>
-<p style="color: #000;">สิทธิพิเศษ สำหรับสมาชิกในเครือ 69 ด้วยระบบสะสมแต้มแลกของรางวัล เพื่อความคุ้มค่า และคืนกำไรให้กับท่านสมาชิกทุกท่าน โดยทุกๆยอดฝาก 200 บาท จะเท่ากับ 1 แต้ม เพื่อให้ท่านสมาชิกได้นำแต้มคะแนนมาแลกของรางวัล พรีเมียม สุดพิเศษ</p>
+			<h1><strong>KRATOMBET</strong></h1>
+<p style="color: #000;">สิทธิพิเศษ สำหรับสมาชิก KRATOMBET ด้วยระบบสะสมแต้มแลกของรางวัล เพื่อความคุ้มค่า และคืนกำไรให้กับท่านสมาชิกทุกท่าน โดยทุกๆยอดฝาก 200 บาท จะเท่ากับ 1 แต้ม เพื่อให้ท่านสมาชิกได้นำแต้มคะแนนมาแลกของรางวัล พรีเมียม สุดพิเศษ</p>
 <p style="color: #000;">สำหรับท่านที่ยังไม่มียูสเซอร์เนม สามารถติดต่อสมัครสมาชิกได้จากข้อมูลด้านล่าง ....<br /><br />โปรดอ่านกฏกติกา และข้อตกลงในการร่วมกิจกรรมได้ที่ &gt;&gt;<a href="getpoint.php" target="_blank" rel="noopener"> กฏกติกาและวิธีเล่น</a></p>
-<p style="color: #00b422;">ติดต่อ ผ่าน LINE ID : <strong>@TheReward69</strong></p>        </div>
+<p style="color: #00b422;">ติดต่อ ผ่าน LINE ID : <strong>@kratombet</strong></p>        </div>
         </div>
 
 		<div class="col-lg-12" style="padding: 0; margin: 5px 0" >
@@ -140,7 +147,7 @@
                           <h5 style="text-align:center; color:red;">ไม่ต้องกรอกที่อยู่ถ้าเลือกสินค้าเป็นเงินสดหรือเครดิตเว็บ</h5>
                         </div>
                         <div class="card-body">
-                        <form role="form" action="confirm.php" method="post" name="addressform">
+                        <form role="form" action="<?php echo $baseUrl ?>/confirm.php" method="post" name="addressform">
                           <fieldset>
                             <div class="row">
                              <div class="form-group col-6">
@@ -158,7 +165,7 @@
                             <div class="row">
                             <div class="form-group col-6">
                              <label for="name" class="font-weight-bold">ยูสเซอร์เนม / Username*</label>
-                             <input type="text" name="ins_username" placeholder="ยูสเซอร์เนม / Username" required  class="form-control"  />
+                             <input type="text" name="ins_username" placeholder="ยูสเซอร์เนม / Username" disabled required class="form-control" value="<?php echo $row_user['username'];?>"  />
                            </div>
                           </div>
 

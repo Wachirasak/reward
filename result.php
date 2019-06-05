@@ -15,13 +15,18 @@
         }
 
         $title = "ตะกร้าสินค้า";
+
+        require 'library/core.php';
         require 'template/front/member_header.php';
 ?>
 
         <!-- Page Body -->
         <div class="row login-zone" >
           <div class="col-lg-6" style="background-color:#f9f9f9; vertical-align: middle; padding:10px " id="loginzone">
-          <h1><strong><?php echo $row_user['firstname'] ?> <?php echo $row_user['lastname'] ?></strong></h1>
+          <h1><strong><?php echo $row_user['firstname'] ?> <?php echo $row_user['lastname'] ?></strong></h1><br />
+          <h4 style="color: #2f5caa;">แต้มที่มี: <?php echo $row_user['own_point'];?></h4><br />
+          <h4><a href="history.php" rel="noopener"> ประวัติการแลก</a></h4><br />
+          <h4><a href="point_history.php" rel="noopener"> ประวัติแต้ม</a></h4>
           </div>
 
           <div class="col" style="background-color:#eeeeee;  vertical-align: middle; padding:10px; min-height: 269px;" >

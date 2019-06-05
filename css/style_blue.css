@@ -1,0 +1,308 @@
+body {
+  font-family: 'Sarabun', sans-serif;
+
+}
+
+	@font-face { src: url('../fonts/thaisanslite_r1-webfont.woff2') format('woff2'),         url('../fonts/thaisanslite_r1-webfont.woff') format('woff');    font-weight: normal;    font-style: normal;}
+	.main{
+		background: #FFFFFF;
+		min-height: 800px;
+		padding-right: 0px;
+		padding-left: 0px;
+	}
+	a:hover {
+		color: #007bff;
+		text-decoration: none;
+		background-color: transparent;
+		-webkit-text-decoration-skip: objects;
+	}
+	hr{
+		border-top: 1px solid #000;
+		margin:0;
+	}
+	.h1, h1 {
+		font-size: 2em;
+		margin: 10px 0;
+	}
+	.h-border{
+    border-bottom: 4px solid #e4c900;
+    color: #6a6a6a;
+    margin-bottom: 1.5rem;
+	font-size: 3em;
+}
+
+	.Top{
+		background-image: url('../img/bg-top.jpg');
+		background-repeat: no-repeat;
+		background-position: top right;
+		background-size: cover;
+	}
+	.logo{
+		padding: 10px 0;
+		display: inline-block;
+		border: 2px solid #b7940d;
+		border-radius: 4px;
+		margin: 2px 2px;
+		background-color: #F6F6F6;
+		}
+
+	 .login-zone{
+			margin: 20px;
+		}
+
+	.bt_login{
+		width: 100%;
+		margin: 10px 0;
+		background-color: #2f5caa;;
+		color: #FFFFFF;
+		font-size: 1.8em;
+		border: none;
+		text-align: center;
+		border-radius: 4px;
+	}
+
+	.bt_login:hover{
+		background-color: #cc0404;
+	}
+
+	.full-row{
+		margin-right: 0px;
+		margin-left: 0px;
+	}
+	.full-row-item{
+		margin-right: 5px;
+		margin-left: 5px;
+	}
+
+	.font-point{font-size: 2em;
+    font-weight: bold;
+    color: #f00;
+}
+
+.nav-menu {text-align:center;}
+.nav-menu>ul{	padding: 0;	margin: auto;}
+.menu-div{	position: relative;	width: 100%; background-color: #2f5caa;;}
+li {    list-style: none;}
+.menu-div .nav-menu ul li {    font-size: 23px;     list-style-type: none;	display: inline;	border-left: 1px solid #000000;	padding: 0 10px;}
+.menu-div .nav-menu ul li:first-child {	border-left: none;}
+.menu-div .nav-menu a {    color: #FFFFFF;	display: inline-block;    text-align: center;    text-decoration: none;    text-transform: uppercase;	}
+.menu-pc{
+			display: inline-block;
+		}
+.menu-mobile{
+			display: none;
+		}
+
+.nav-tabs {
+    border-bottom: 5px solid #2f5caa;
+}
+.nav-tabs > li {
+    float: left;
+    margin-bottom: 0px;
+}
+
+.nav-tabs .nav-link.active,  .nav-tabs > li.active > a:focus, .nav-tabs > li.active > a:hover {
+    color: #fff;
+    cursor: default;
+    background-color: #2f5caa;
+	border:none;
+
+}
+
+.nav-tabs > li > a {
+    margin: 0 5px;
+    line-height: 1.42857143;
+    border: none;
+    border-radius: 4px 4px 0 0;
+
+}
+.nav > li > a:focus, .nav > li > a:hover {
+
+    text-decoration: none;
+    background-color: #2f5caa;
+    color: #FFFFFF;
+
+}
+
+.tab-link{
+	color:#000000;
+	background-color: #ddd;
+}
+
+
+.reward {
+    position: relative;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    min-width: 0;
+	min-height: 450px;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 1px solid rgba(0,0,0,.125);
+    border-radius: .25rem;
+    word-wrap: break-word;
+}
+.reward-body {
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    padding: 1.25rem;
+}
+
+.pd-item .reward > a {
+    text-align: center;
+    padding: 10px;
+}
+.pd-item .reward > a .reward-img-top {
+    max-height: 180px;
+}
+.pd-item .reward > a .reward-img-top {
+    width: auto;
+    max-width: 100%;
+}
+.reward-img-top {
+    width: 100%;
+    border-top-left-radius: calc(.25rem - 1px);
+    border-top-right-radius: calc(.25rem - 1px);
+}
+.div-reward{
+	text-align: center;
+}
+.bt-reward{
+	cursor:pointer; background-color:#2f5caa; color:#fff; margin-bottom:5px; font-size: 1.8em;
+}
+.bt-reward-dis{
+	background-color:#595959; color:#fff; margin-bottom:5px; font-size: 1.8em;
+}
+.bt-reward-dis:hover , .bt-reward-dis:visited , .bt-reward-dis:active , .bt-reward-dis:focus{
+	color: #FFFFFF;
+}
+.bt-reward:hover , .bt-reward:visited , .bt-reward:active , .bt-reward:focus{
+	background-color:#cc0404;
+	color: #FFFFFF;
+}
+.bt-cart{
+	cursor:pointer; background-color:#2f5caa; color:#fff; margin-bottom:5px; font-size: 1.7em;
+}
+
+.h-item{border-bottom: 2px solid #c5ad00; color:#bd0000;font-size: 3em;font-weight: bold;}
+.d-item{color:#000000; font-size: 2.5em; font-weight: bold;}
+.reward-img-item{
+	width:100%;
+	max-width:500px;
+	border-top-left-radius: calc(.25rem - 1px);
+    border-top-right-radius: calc(.25rem - 1px);
+}
+.remain-text{
+    margin: 0;
+    font-size: 0.9em;
+    color: #909090;
+}
+
+.line-footer {
+    display: block;
+    width: 100%;
+    background-color: #760004;
+    margin: 20px 0;
+    height: 10px;
+}
+.dv-sponser{
+    text-align: center;
+}
+.sponser-img{
+	height:100px;
+}
+.txt-cr{
+    text-align: center;
+    padding: 20px 0;
+    margin: 0;
+}
+
+.cartbutton {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    padding: 20px;
+    text-align: right;
+}
+
+.qrlineat{padding: 5px 20px;}
+
+@media only screen and (max-width:768px) {
+
+		.logo-img{
+			width: 100%;
+		}
+
+		.nav-menu>ul{margin: 0; width: 100%;}
+		.menu-pc{
+			display: none;
+		}
+		.menu-mobile{
+			display: inline-block;
+		}
+		.menu-div {
+			margin-top: 5px;
+		}
+		.menu-div .nav-menu ul li {
+			font-size: 18px;
+			display: block;
+			border: 1px solid #000000;
+			width: 33.3333%;
+			float: left;
+			padding: 7px 0px 7px 0px;
+		}
+
+		.login-zone{
+			margin: 0 20px;
+				}
+		.nav-tabs {
+			border-bottom: none;
+		}
+		.nav-tabs > li {
+			width: 50%;
+		}
+		.nav-tabs > li > a {
+			background-color: #ddd;
+			text-align: center;
+		}
+		.nav-tabs > li > a {
+			margin: 0;
+			border-radius: 0;
+		}
+		.pd-item{
+			width:50%;
+			padding: 0 5px;
+			float: left;
+		}
+		.reward {
+			min-height:360px;
+		}
+		.reward-body {
+			padding: 0 2px;
+			font-size: 0.8em;
+		}
+		.reward-body>h2 {
+			font-size: 2rem;
+		}
+
+		.sponser-img {
+			height: auto;
+			max-width: 80%;
+		}
+
+		.qrlineat{ display: none;}
+
+		.ftreglineat{
+			width:90%;
+		}
+
+}
+
+@media (max-width: 768px){
+    .container {
+    max-width: 100%;
+    }
+  }

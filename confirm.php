@@ -40,15 +40,17 @@
 
 				if ($result_order && $result4) {
 					//update point
-					$sql_updatepoint = "UPDATE users SET own_point = own_point-$total_point WHERE id = ".$user_id;
-					$result_updatepoint = mysqli_query($con,$sql_updatepoint);
-					$_SESSION['order_success'] = 'ทำรายการเรียบร้อยแล้ว <BR> กรุณารอแอดมินตรวจสอบข้อมูล';
+					if (mysqli_query($con,"UPDATE users SET own_point = own_point-$total_point WHERE id = ".$user_id)) {
+            mysqli_query($con, "INSERT INTO point_history(user_id,minus_point,note) VALUES('".$_SESSION['usr_id']."','".$total_point."','แลกของ รหัส $order_id')");
+
+          $_SESSION['order_success'] = 'ทำรายการเรียบร้อยแล้ว <BR> กรุณารอแอดมินตรวจสอบข้อมูล';
+
 					foreach($_SESSION['cart'] as $p_id)
 							{
 								unset($_SESSION['cart']);
 							}
           header("Location: result.php");
-
+        }
 				} else {
 					$_SESSION['order_error'] = 'ไม่สามารถทำรายการได้ กรุณาตรวจสอบข้อมูลแล้วลองใหม่อีกครั้ง';
           header("Location: cart.php");
