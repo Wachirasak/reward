@@ -26,8 +26,10 @@ if (isset($_POST['submit'])) {
         if (!$error) {
         if(mysqli_query($con, "UPDATE products SET name = '".$name."', detail = '".$detail."' , point = '".$point."' ,
         product_category_id = '".$product_category_id."'WHERE id = " . $id)){
-          $successmsg = "แก้ไขสินค้าเรียบร้อยแล้ว <a href='index.php'>กลับ</a>";
-          header("Location: index.php");
+          //$successmsg = "แก้ไขสินค้าเรียบร้อยแล้ว <a href='index.php'>กลับ</a>";
+          echo '<script type="text/javascript">';
+          echo 'setTimeout(function () { swal();';
+          echo '}, 100);</script>';
           } else {
           $errormsg = "ไม่สามารถแก้ไขได้ กรุณาลองใหม่อีกครั้ง";
             }
@@ -51,6 +53,8 @@ if (isset($_POST['submit'])) {
 }
 
 $title = "แก้ไขสินค้า";
+
+require '../../library/core.php';
 require '../../template/back/header.php';
 
 $error = false;
@@ -96,7 +100,7 @@ $error = false;
 
 					<div class="form-group">
 						<label for="name" class="font-weight-bold">รูปภาพ</label>
-            <td><img src="images/<?php echo $row['image'];?>" height="100rem"</td>
+            <td><img src="../images/<?php echo $row['image'];?>" height="100rem"</td>
             <input type="file" name="image" id="image">
 					</div>
 
@@ -114,7 +118,19 @@ $error = false;
 </div>
 <script>
 function back() {
-window.location.href = 'index.php';
+window.location.href = '../index.php';
+  }
+  function swal() {
+    Swal.fire({
+      title: 'แก้ไขสินค้าเรียบร้อยแล้ว',
+      type: 'success',
+      confirmButtonColor: '#3085d6',
+      confirmButtonText: 'ยืนยัน',
+      allowOutsideClick: false
+    }).then(function() {
+    // Redirect the user
+    window.location.href = "index.php";
+    });
   }
 </script>
 <?php

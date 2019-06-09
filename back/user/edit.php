@@ -34,7 +34,10 @@ if (isset($_POST['submit'])) {
         if (!$error) {
         if (mysqli_query($con, "UPDATE users SET firstname = '".$firstname."', lastname = '".$lastname."' , username = '".$username."' ,
         phone = '".$phone."' WHERE id = " . $id)){
-          $successmsg = "แก้ไขผู้ใช้เรียบร้อยแล้ว <a href='index.php'>กลับ</a>";
+          //$successmsg = "แก้ไขผู้ใช้เรียบร้อยแล้ว <a href='index.php'>กลับ</a>";
+          echo '<script type="text/javascript">';
+          echo 'setTimeout(function () { swal();';
+          echo '}, 100);</script>';
           } else {
           $errormsg = "ไม่สามารถแก้ไขได้ กรุณาลองใหม่อีกครั้ง";
             }
@@ -42,6 +45,8 @@ if (isset($_POST['submit'])) {
        }
 
 $title = "แก้ไขผู้ใช้";
+
+require '../../library/core.php';
 require '../../template/back/header.php';
 
 $error = false;
@@ -92,7 +97,20 @@ $error = false;
 </div>
 <script>
 function back() {
-window.location.href = 'index.php';
+window.location.href = '../index.php';
+  }
+
+  function swal() {
+    Swal.fire({
+      title: 'แก้ไขผู้ใช้เรียบร้อยแล้ว',
+      type: 'success',
+      confirmButtonColor: '#3085d6',
+      confirmButtonText: 'ยืนยัน',
+      allowOutsideClick: false
+    }).then(function() {
+    // Redirect the user
+    window.location.href = "index.php";
+    });
   }
 </script>
 <?php

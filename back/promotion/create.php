@@ -9,25 +9,25 @@ require '../../template/back/header.php';
 
 $error = false;
 if (isset($_POST['submit'])) {
-        mysqli_query($con, "INSERT INTO product_categories(name,code) VALUES('".$_POST['name']."','".$_POST['code']."')");
+        mysqli_query($con, "INSERT INTO promotion(detail,code) VALUES('".$_POST['promotion_detail']."','".$_POST['promotion_code']."')");
        }
 
 
 ?>
 <div class="container-fluid">
-  <h2 class="mt-1">เพิ่มหมวดหมู่สินค้า</h2>
+  <h2 class="mt-1">เพิ่มโปรโมชัน</h2>
 	<div class="row">
 		<div class="col-lg-4 col-lg-offset-4 card card-body bg-light" style="margin-top:20px; margin-left:20px;">
-			<form role="form" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" name="addproductcategoryform">
+			<form role="form" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" name="addpromotion">
 				<fieldset>
 					<div class="form-group">
-						<label for="name" class="font-weight-bold">ชื่อหมวดหมู่</label>
-						<input type="text" name="name" placeholder="ชื่อหมวดหมู่" required  class="form-control" />
+						<label for="name" class="font-weight-bold">รายละเอียดโปรโมชัน</label>
+						<input type="text" name="promotion_detail" placeholder="รายละเอียดโปรโมชัน" required  class="form-control" />
 					</div>
 
          <div class="form-group">
           <label for="name" class="font-weight-bold">รหัส</label>
-          <input type="text" name="code" placeholder="รหัส" required  class="form-control" />
+          <input type="text" name="promotion_code" placeholder="รหัส" required  class="form-control" />
         </div>
 
 					<div class="form-group">

@@ -2,7 +2,13 @@
 
 include_once '../../dbconnect.php';
 
+// fetch promotion
+$sql = "SELECT * FROM promotion order by id";
+$result = mysqli_query($con, $sql);
+
 $title = "เพิ่มผู้ใช้";
+
+require '../../library/core.php';
 require '../../template/back/header.php';
 
 $error = false;
@@ -13,6 +19,7 @@ if (isset($_POST['submit'])) {
         $username = mysqli_real_escape_string($con, $_POST['username']);
         $phone = mysqli_real_escape_string($con, $_POST['phone']);
         $own_point = mysqli_real_escape_string($con, $_POST['own_point']);
+        $promotion = mysqli_real_escape_string($con, $_POST['promotion']);
 
 
         if (!preg_match("/^[a-zA-Zก-๙-]+$/",$firstname)) {
@@ -33,8 +40,15 @@ if (isset($_POST['submit'])) {
         }
         if (!$error) {
         if (mysqli_query($con, "INSERT INTO users(firstname,lastname,username,phone,own_point) VALUES('".$firstname."','".$lastname."',
-        '".$username."','".$phone."','".$own_point."')")) {
-          $successmsg = "เพิ่มผู้ใช้เรียบร้อยแล้ว <a href='index.php'>กลับ</a>";
+          '".$username."','".$phone."','".$own_point."')"))
+          {
+          $sql2 = "SELECT max(id) as user_id FROM users";
+          $result2 = mysqli_query($con,$sql2);
+          $row2 = mysqli_fetch_array($result2);
+          mysqli_query($con, "INSERT INTO point_history(user_id,add_point,promotion,note,admin) VALUES('".$row2['user_id']."','".$own_point."','".$promotion."','แต้มแรกเข้า','".$_SESSION['admin_usrname']."')");
+           echo '<script type="text/javascript">';
+           echo 'setTimeout(function () { swal();';
+           echo '}, 100);</script>';
           } else {
           $errormsg = "ไม่สามารถเพิ่มได้ กรุณาลองใหม่อีกครั้ง";
             }
@@ -74,9 +88,19 @@ if (isset($_POST['submit'])) {
 
           <div class="form-group">
             <label for="name" class="font-weight-bold">แต้มแรกเข้า</label>
-            <input type="text" name="own_point" placeholder="แต้มแรกเข้า" required class="form-control" value="<?php if($error) echo $own_point;?>"  />
+            <input type="number" name="own_point" placeholder="แต้มแรกเข้า" class="form-control" value="<?php if($error) echo $own_point;?>"  />
             <span class="text-danger"><?php if (isset($own_point_error)) echo $own_point_error; ?></span>
           </div>
+
+          <div class="form-group">
+						<label for="name" class="font-weight-bold">โปรโมชัน</label>
+            <select name="promotion" class="form-control input-sm">
+                  <option value="">-</option>
+                  <?php while($row = mysqli_fetch_array($result)) { ?>
+                  <option value="<?php echo $row['detail']; ?>"><?php echo $row['detail']; ?></option>
+                <?php } ?>
+            </select>
+					</div>
 
 					<div class="form-group">
 						<button type="submit" name="submit" class="btn btn-primary btn-sm"><i class="fas fa-plus-circle"></i> บันทึก</button>
@@ -93,6 +117,18 @@ if (isset($_POST['submit'])) {
 <script>
 function back() {
 window.location.href = 'index.php';
+  }
+  function swal() {
+    Swal.fire({
+      title: 'เพิ่มผู้ใช้แล้ว',
+      type: 'success',
+      confirmButtonColor: '#3085d6',
+      confirmButtonText: 'ยืนยัน',
+      allowOutsideClick: false
+    }).then(function() {
+    // Redirect the user
+    window.location.href = "index.php";
+    });
   }
 </script>
 

@@ -12,20 +12,22 @@
     }
 $title = "จัดการหมวดหมู่สินค้า";
 
+require '../../library/core.php';
 require '../../template/back/header.php';
 ?>
 
 <div class="container-fluid">
   <h2 class="mt-1">จัดการหมวดหมู่สินค้า</h2>
-  <button name="adduser" class="btn btn-success btn-sm" onclick="add_productcategory()"><i class="fas fa-plus-circle"></i> เพิ่มหมวดหมู่สินค้า</button>
-           <div class="table-responsive" style="margin-top:17px;">
+  <div class="row">
+  <div class="col-xl-7">
+  <div class="card" style="margin-top:1rem;">
+           <div class="table-responsive">
             <table class="table table-hover">
                 <thead>
                     <tr>
                         <th>#</th>
                         <th>ชื่อหมวดหมู่</th>
                         <th>รหัส</th>
-                        <th colspan="2" style="text-align:center"></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -37,14 +39,14 @@ require '../../template/back/header.php';
                         <td><?php echo $cnt++; ?></td>
                         <td><?php echo $row['name']; ?></td>
                         <td><?php echo $row['code']; ?></td>
-                        <td>
-                          <button name="delete" class="btn btn-danger btn-sm" onclick="delete_productcategory(<?php echo $row['id']; ?>)"><i class="fas fa-trash-alt"></i> ลบ</button>
-                        </td>
                     </tr>
                     <?php } ?>
                 </tbody>
             </table>
            </div>
+          </div>
+          </div>
+        </div>
         </div>
     </div>
 </div>

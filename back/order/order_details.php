@@ -15,12 +15,14 @@
     $result3 = mysqli_query($con,$sql3);
 
     $title = "รายละเอียดการสั่งซื้อสินค้า";
-
+    
+    require '../../library/core.php';
     require '../../template/back/header.php';
+    require '../../template/back/thaidate.php';
     ?>
 
 
-    <div class="container-fluid">
+    <div class="container-fluid" >
       <h2 class="mt-1">ข้อมูลติดต่อและที่อยู่จัดส่ง</h2>
     	<div class="row" style="margin-top:20px;">
         <div class="col-lg-6">
@@ -34,7 +36,7 @@
                         <li class="list-group-item"><strong>จังหวัด</strong> : <?php echo $row['province'];?></li>
                         <li class="list-group-item"><strong>รหัสไปรษณีย์</strong> : <?php echo $row['zipcode'];?></li>
                         <li class="list-group-item"><strong>ประเทศ</strong> : <?php echo $row['country'];?></li>
-                        <li class="list-group-item">*วันที่สร้าง <?php echo $row['order_date'];?></li>
+                        <li class="list-group-item">*วันที่สร้าง <?php echo thaidate($row['order_date']);?></li>
                     </ul>
         </div>
         <div class="col-lg-6">
@@ -69,6 +71,14 @@
                                 </tr>
                           </tbody>
                       </table>
+        </div>
+      </div>
+        <div class="row" style="margin-top:20px;">
+        <div class="col-lg-6">
+          <ul class="list-group">
+                        <li class="list-group-item"><strong>หมายเหตุการยกเลิก (ถ้ายกเลิก)</strong> : <?php echo $row['cancel_reason']; ?></li>
+                        <li class="list-group-item"><strong>เลข EMS (ถ้ามีการส่งของ)</strong> : <?php echo $row['ems'];?></li>
+                    </ul>
         </div>
       </div>
     </div>

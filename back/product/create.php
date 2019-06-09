@@ -7,6 +7,8 @@ $sql = "SELECT * FROM product_categories order by id";
 $result = mysqli_query($con, $sql);
 
 $title = "เพิ่มสินค้า";
+
+require '../../library/core.php';
 require '../../template/back/header.php';
 
 $error = false;
@@ -32,7 +34,10 @@ if (isset($_POST['submit'])) {
         if (!$error) {
         if(mysqli_query($con, "INSERT INTO products(name,detail,point,image,product_category_id) VALUES('".$name."','".$detail."','".$point."',
         '$image','".$product_category_id."')")){
-          $successmsg = "เพิ่มสินค้าเรียบร้อยแล้ว <a href='index.php'>กลับ</a>";
+          echo '<script type="text/javascript">';
+          echo 'setTimeout(function () { swal();';
+          echo '}, 100);</script>';
+          //$successmsg = "เพิ่มสินค้าเรียบร้อยแล้ว <a href='index.php'>กลับ</a>";
           } else {
           $errormsg = "ไม่สามารถเพิ่มได้ กรุณาลองใหม่อีกครั้ง";
             }
@@ -61,7 +66,7 @@ if (isset($_POST['submit'])) {
           <label for="name" class="font-weight-bold">แต้มที่ใช้แลก</label>
           <input type="text" name="point" placeholder="แต้มที่ใช้แลก" required  class="form-control" value="<?php if($error) echo $point;?>" />
           <span class="text-danger"><?php if (isset($point_error)) echo $point_error; ?></span>
-        </div>
+         </div>
 
 					<div class="form-group">
 						<label for="name" class="font-weight-bold">หมวดหมู่</label>
@@ -92,6 +97,18 @@ if (isset($_POST['submit'])) {
 <script>
 function back() {
 window.location.href = 'index.php';
+  }
+  function swal() {
+    Swal.fire({
+      title: 'เพิ่มสินค้าแล้ว',
+      type: 'success',
+      confirmButtonColor: '#3085d6',
+      confirmButtonText: 'ยืนยัน',
+      allowOutsideClick: false
+    }).then(function() {
+    // Redirect the user
+    window.location.href = "index.php";
+    });
   }
 </script>
 <?php
