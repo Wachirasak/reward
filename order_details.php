@@ -51,14 +51,6 @@
       <p style="color: #00b422;">ติดต่อ ผ่าน LINE ID : <strong>@TheReward69</strong></p>        </div>
         </div>
 
-      <div class="col-lg-12" style="padding: 0; margin: 5px 0" >
-        <div >
-      <a href="http://www.dootv69.com" target="_blank">
-              <img src="../img/dootv69.gif" alt="Dootv69" style="width: 100%;">
-      </a>
-        </div>
-        </div>
-
       </div>
       <div class="container-fluid" id='details'>
         <h2 class="mt-1">รายละเอียด</h2>

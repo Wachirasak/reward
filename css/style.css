@@ -24,12 +24,7 @@ body {
 		font-size: 2em;
 		margin: 10px 0;
 	}
-	.h-border{
-    border-bottom: 4px solid #e4c900;
-    color: #6a6a6a;
-    margin-bottom: 1.5rem;
-	font-size: 3em;
-}
+
 
 	.Top{
 		background-image: url('../img/bg-top.jpg');
@@ -224,7 +219,15 @@ li {    list-style: none;}
     position: fixed;
     bottom: 0;
     right: 0;
-    padding: 20px;
+    padding: 10px;
+    text-align: right;
+}
+
+.linebutton {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    padding: 10px;
     text-align: right;
 }
 
@@ -305,5 +308,11 @@ li {    list-style: none;}
 @media (max-width: 768px){
     .container {
     max-width: 100%;
-    }
+	}
   }
+
+  @media (max-width: 576px) {
+    th,td {
+    font-size: 70% !important;
+    }
+ }

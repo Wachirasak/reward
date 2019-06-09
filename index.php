@@ -27,6 +27,8 @@
       $sql_cate6 = "SELECT * FROM products WHERE product_category_id = 6 ORDER BY created";
       $result_cate6 = mysqli_query($con, $sql_cate6);
 
+      $title = "KTReward";
+
       require 'library/core.php';
       require 'template/front/header.php';
 
@@ -36,7 +38,7 @@
       <!-- Page Body -->
       <div class="row login-zone" >
         <div class="col-lg-6" style="background-color:#f9f9f9; vertical-align: middle; padding:10px " id="loginzone">
-		<h1 class="h-border"> เข้าสู่ระบบ</h1>
+		<h1> เข้าสู่ระบบ</h1>
 		    <div style="">
               <form action="login.php" method="post" enctype="multipart/form-data"  id="login">
 				<span style="color:#6a6a6a">ยูสเซอร์เนม / Username</span>
@@ -55,7 +57,7 @@
         <div >
 			<h1><strong>KRATOMBET</strong></h1>
 <p style="color: #000;">สิทธิพิเศษ สำหรับสมาชิก KRATOMBET ด้วยระบบสะสมแต้มแลกของรางวัล เพื่อความคุ้มค่า และคืนกำไรให้กับท่านสมาชิกทุกท่าน โดยทุกๆยอดฝาก 200 บาท จะเท่ากับ 1 แต้ม เพื่อให้ท่านสมาชิกได้นำแต้มคะแนนมาแลกของรางวัล พรีเมียม สุดพิเศษ</p>
-<p style="color: #000;">สำหรับท่านที่ยังไม่มียูสเซอร์เนม สามารถติดต่อสมัครสมาชิกได้จากข้อมูลด้านล่าง ....<br /><br />โปรดอ่านกฏกติกา และข้อตกลงในการร่วมกิจกรรมได้ที่ &gt;&gt;<a href="getpoint.php" target="_blank" rel="noopener"> กฏกติกาและวิธีเล่น</a></p>
+<p style="color: #000;">สำหรับท่านที่ยังไม่มียูสเซอร์เนม สามารถติดต่อสมัครสมาชิกได้จากข้อมูลด้านล่าง ....<br /><br />โปรดอ่านกฏกติกา และข้อตกลงในการร่วมกิจกรรมได้ที่ &gt;&gt;<a href="howtogetpoint.php" target="_blank" rel="noopener"> กฏกติกาและวิธีเล่น</a></p>
 <p style="color: #00b422;">ติดต่อ ผ่าน LINE ID : <strong>@kratombet</strong></p>        </div>
         </div>
 
@@ -266,6 +268,19 @@
        </div>
      </div>
   </div>
+  <div class="linebutton">
+            <div>
+              <button type="button" name="linebutton" class="btn btn-md btn-primary btn-block bt-reward" onclick="line()"><i class="fab fa-line"></i>
+              สมัครผ่านไลน์
+              </button>
+            </div>
+            </div>
+            <script>
+
+            function line() {
+               window.location.href = 'http://line.me/ti/p/@kratombet';
+            }
+            </script>
 	<!-- END Page Body -->
   <?php
   require 'template/front/footer.php';

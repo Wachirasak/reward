@@ -57,7 +57,7 @@
                       <?php echo $_SESSION['admin_usrname']; ?>
                       </a>
                       <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="../../back/home/admin_logout.php">ออกจากระบบ</a>
+                        <a class="dropdown-item" href="<?php echo $baseUrl ?>/back/home/admin_logout.php">ออกจากระบบ</a>
                       </div>
                     </li>
                   </ul>

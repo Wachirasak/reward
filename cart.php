@@ -165,7 +165,7 @@
                             <div class="row">
                             <div class="form-group col-6">
                              <label for="name" class="font-weight-bold">ยูสเซอร์เนม / Username*</label>
-                             <input type="text" name="ins_username" placeholder="ยูสเซอร์เนม / Username" disabled required class="form-control" value="<?php echo $row_user['username'];?>"  />
+                             <input type="text" name="ins_username" placeholder="ยูสเซอร์เนม / Username" required class="form-control" value="<?php echo $row_user['username'];?>"  />
                            </div>
                           </div>
 
